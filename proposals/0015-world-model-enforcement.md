@@ -1018,7 +1018,7 @@ Some existing Instead rules for the six changed actions might need to be revised
 
 While many check rules block acting upon other people or their possessions, there are several omissions, and existing rules generally don't consider acting on *parts* of people.
 
-The player has license to pull, push, turn, touch, or rub Bob's nose. Some others don't check regarding other people at all: one can search, look under, or even taste Bob. Even when incorporation is checked for, rules may not check indirect incorporation. If you try to drop your nose, you're told "You can't drop part of yourself." But if a mole is part of your nose, and you dry to drop the mole,you're told "You haven't got that."
+The player has license to pull, push, turn, touch, or rub Bob's nose. Some others don't check regarding other people at all: one can search, look under, or even taste Bob. Even when incorporation is checked for, rules may not check indirect incorporation. If you try to drop your nose, you're told "You can't drop part of yourself." But if a mole is part of your nose, and you dry to drop the mole, you're told "You haven't got that."
 
 By default, one can't give things to another person, but one can put things in or on whatever containers or supporters they enclose. Likewise, one can open, close, lock, unlock, or search their containers, or switch on or off their devices (or other things that can be switched on).
 
@@ -1085,20 +1085,6 @@ Numerous actions' check rules don't distinguish the actor being acted upon from 
 ### Improvements
 
 Appropriate check rules for self-directed actions will be added.
-
-## Ceasing to use carried thing in the Standard Rules' action definitions
-
-### Infelicities in Inform 10.1
-
-An extremely common thing one might ask an NPC for is giving you something. If you ask an NPC for something they're not carrying, you *always* get the "([NPC] first taking the [noun])", no matter how absurd such an attempt is, and whether or not persuasion will succeed or fail. (The same applies to the other 5 actions with a carried thing requirement: throwing it at, wearing, unlocking it with, locking it with, but they come up less often.)
-
-If the player attempts something absurd with one of those actions (e.g., "wear moon"), there's also an implicit take with a "(first taking the [noun])" message.
-
-### Improvements
-
-These actions' specifications will now use touchable things instead of carried things; appropriate check rules will be added to attempt the implicit take at the appropriate place,
-
-Persuasion now precedes implicit taking, so there will be no more "first taking the (noun)" messages for people who would then refuse to give you the thing.
 
 ## Check tangibility for all actions requiring touchable things
 
@@ -1186,4 +1172,3 @@ Otis the Dog has provided code that ameliorates these and other issues.
 The level of granularity in the World Model's consideration of the visibility and touchability ceilings is determined by CoreOfParentOfCoreOf, which is used by CommonAncestor. 
 
 At the heart of Otis' revisions is to instead base the level of granularity on ParentOfCoreOf and to have the Access through barriers rule use a new CommonHolder routine based on ParentOfCoreOf in the same way that CommonAncestor uses CoreOfParentOfCoreOf. This sounds like an alarming change, but in practice thus far it works well.
-
